@@ -61,44 +61,35 @@ function initNavScroll() {
 
 // ===== DROPDOWN MENU =====
 function initDropdownMenu() {
-    const dropdown = document.querySelector('.nav-dropdown');
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    
-    if (dropdown && dropdownToggle && dropdownMenu) {
-        // Click on arrow or anywhere on the toggle to show dropdown
-        dropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-        
-        // Close dropdown when clicking a dropdown link
-        const dropdownLinks = dropdownMenu.querySelectorAll('a');
-        dropdownLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                dropdown.classList.remove('active');
+        const dropdown = document.querySelector('.nav-dropdown');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        if (!dropdown || !dropdownToggle || !dropdownMenu) return;
+
+        // MOBILE ONLY (768px and below)
+        if (window.innerWidth <= 768) {
+
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
             });
-        });
-        
-        /*// COMMENTED OUT DUE TO POTENTIAL RACE CONDTION ON MOBILE - MAY NEED REWORKING
-        if (window.innerWidth > 768) {
-            dropdown.addEventListener('mouseenter', () => {
-                dropdown.classList.add('active');
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dropdown.contains(e.target)) {
+                    dropdown.classList.remove('active');
+                }
             });
-            
-            dropdown.addEventListener('mouseleave', () => {
-                dropdown.classList.remove('active');
+
+            // Close after clicking a link
+            dropdownMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    dropdown.classList.remove('active');
+                });
             });
-        }*/
+        }
     }
-}
 
 // ===== MOBILE MENU TOGGLE =====
 function initMobileMenu() {

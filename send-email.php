@@ -59,7 +59,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $recipient = 'srmcclafferty@gmail.com';
 
 // Email subject
-$emailSubject = "📬 [{$subject}] Message from {$name}";
+$emailSubject = "[{$subject}] Message from {$name}";
 
 // Create email body
 $emailBody = "
@@ -77,7 +77,7 @@ $emailBody = "
 <body>
     <div class='container'>
         <div class='header'>
-            <h2>📢 New Contact Form Submission</h2>
+            <h2>New Contact Form Submission</h2>
         </div>
         
         <div class='content'>
@@ -93,7 +93,7 @@ $emailBody = "
         </div>
         
         <div class='footer'>
-            <p><strong>💡 Quick Reply:</strong> Simply hit 'Reply' to respond directly to {$name} at {$email}</p>
+            <p><strong>Quick Reply:</strong> Simply hit 'Reply' to respond directly to {$name} at {$email}</p>
         </div>
         
         <div style='text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;'>

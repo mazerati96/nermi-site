@@ -61,32 +61,32 @@ function initNavScroll() {
 
 // ===== DROPDOWN MENU =====
 function initDropdownMenu() {
-        const dropdown = document.querySelector('.nav-dropdown');
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
+    const dropdown = document.querySelector('.nav-dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
 
-        if (!dropdown || !dropdownToggle || !dropdownMenu) return;
+    if (!dropdown || !dropdownToggle || !dropdownMenu) return;
 
-        // MOBILE ONLY (768px and below)
-        if (window.innerWidth <= 768) {
+    // MOBILE ONLY (768px and below)
+    if (window.innerWidth <= 768) {
 
    
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!dropdown.contains(e.target)) {
-                    dropdown.classList.remove('active');
-                }
-            });
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
 
-            // Close after clicking a link
-            dropdownMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    dropdown.classList.remove('active');
-                });
+        // Close after clicking a link
+        dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                dropdown.classList.remove('active');
             });
-        }
+        });
     }
+}
 
 // ===== MOBILE MENU TOGGLE =====
 function initMobileMenu() {
@@ -154,6 +154,118 @@ function initStaggerAnimation() {
     });
 }
 
+// ===== META SLIDER (Pitch Deck Slider) =====
+function initMetaSlider() {
+    const slider = document.querySelector('.metaslider');
+    if (!slider) return; // Only run on pages with metaslider
+
+    const slides = slider.querySelectorAll('.metaslide');
+    const dots = document.querySelectorAll('.metaslider-dot');
+    const prevBtn = slider.querySelector('.metaslider-prev');
+    const nextBtn = slider.querySelector('.metaslider-next');
+    
+    let currentSlide = 0;
+    let autoPlayInterval;
+    let isPaused = false;
+
+    // Show specific slide
+    function showSlide(index) {
+        // Wrap around
+        if (index >= slides.length) {
+            currentSlide = 0;
+        } else if (index < 0) {
+            currentSlide = slides.length - 1;
+        } else {
+            currentSlide = index;
+        }
+
+        // Update slides
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentSlide);
+        });
+
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+    }
+
+    // Next slide
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    // Previous slide
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    // Start auto-play
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 5000); // 5 seconds
+    }
+
+    // Stop auto-play
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Button event listeners
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            stopAutoPlay();
+            if (!isPaused) startAutoPlay();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            stopAutoPlay();
+            if (!isPaused) startAutoPlay();
+        });
+    }
+
+    // Dot indicators
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoPlay();
+            if (!isPaused) startAutoPlay();
+        });
+    });
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => {
+        isPaused = true;
+        stopAutoPlay();
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isPaused = false;
+        startAutoPlay();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!slider.matches(':hover')) return; // Only work when hovering slider
+        
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            stopAutoPlay();
+            if (!isPaused) startAutoPlay();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            stopAutoPlay();
+            if (!isPaused) startAutoPlay();
+        }
+    });
+
+    // Start the auto-play
+    startAutoPlay();
+}
+
 // ===== INITIALIZE EVERYTHING ON PAGE LOAD =====
 document.addEventListener('DOMContentLoaded', () => {
     initCardParallax();
@@ -163,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSmoothScroll();
     initStaggerAnimation();
+    initMetaSlider();
   
     console.log('NerMI website loaded successfully!');
 });

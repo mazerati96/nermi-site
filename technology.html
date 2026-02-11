@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NerMI Technology - Emotion & personality from a single PPG stream. Real-time autonomic interface tracking valence, motivation, and activation.">
+    <meta name="keywords" content="NerMI, PPG, photoplethysmography, emotion tracking, autonomic, EKF, real-time emotion">
+
+    <title>Technology | NerMI™</title>
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION (Will be updated with special layout later) ===== -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo-link">
+                <!-- UNCOMMENT WHEN YOU HAVE THE LOGO -->
+                <!-- <img src="assets/logos/nermi-logo.png" alt="NerMI Logo" class="nav-logo"> -->
+                <h3 style="margin: 0; color: white;">NerMI<span class="trademark">™</span></h3>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="technology.html">Technology</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" style="min-height: 60vh;">
+        <div class="container">
+            <div class="hero-content fade-up">
+                <p class="hero-tagline">NerMI Technology</p>
+                <h1>Emotion & personality from a single PPG stream.</h1>
+                <p class="hero-subtitle">
+                    NerMI turns photoplethysmography into a <strong>real-time autonomic interface</strong>—tracking
+                    <strong>valence</strong>, <strong>motivation</strong>, and <strong>activation</strong> per heartbeat, on-device,
+                    without black-box models or cloud dependence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== KEY SPECS SECTION ===== -->
+    <section style="background: var(--bg-primary); padding: var(--space-20) 0;">
+        <div class="container">
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-6);">
+                <div class="feature-item fade-up">
+                    <h4>Sampling</h4>
+                    <p style="font-size: var(--text-base); color: var(--text-secondary);">Per heartbeat</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin: 0;">Continuous emotional dynamics</p>
+                </div>
+
+                <div class="feature-item fade-up">
+                    <h4>Autonomic branches</h4>
+                    <p style="font-size: var(--text-base); color: var(--text-secondary);">PNS · α-SNS · β-SNS</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin: 0;">Three-dimensional emotion</p>
+                </div>
+
+                <div class="feature-item fade-up">
+                    <h4>Hardware</h4>
+                    <p style="font-size: var(--text-base); color: var(--text-secondary);">Standard PPG</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin: 0;">Research & consumer devices</p>
+                </div>
+
+                <div class="feature-item fade-up">
+                    <h4>Real-time emotion</h4>
+                    <p style="font-size: var(--text-base); color: var(--text-secondary);">Personality over time</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin: 0;">Lawful physiology</p>
+                </div>
+
+                <div class="feature-item fade-up">
+                    <h4>Core framework</h4>
+                    <p style="font-size: var(--text-base); color: var(--text-secondary);">On-device</p>
+                    <p style="font-size: var(--text-xs); color: var(--text-tertiary); margin: 0;">C-optimized · Cloud-optional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THREE DIMENSIONS SECTION ===== -->
+    <section style="background: var(--bg-accent-light); padding: var(--space-24) 0;">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; margin-bottom: var(--space-16);">
+                <h2>Three dimensions, three autonomic branches.</h2>
+                <p style="max-width: 900px; margin: 0 auto; font-size: var(--text-lg); color: var(--text-secondary);">
+                    NerMI decomposes the PPG signal into lawful physiological components, mapping directly onto
+                    parasympathetic, α-sympathetic, and β-sympathetic activity—no guessing, no generic "stress scores."
+                </p>
+                <p style="margin-top: var(--space-6); font-family: var(--font-mono); color: var(--green-700); font-weight: var(--font-semibold);">
+                    Single PPG input → multi-dimensional output
+                </p>
+            </div>
+
+            <!-- Dimension Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-10); margin-top: var(--space-12);">
+                <!-- Dimension I -->
+                <div class="audience-card fade-up">
+                    <h3 style="color: var(--green-600);">Dimension I: Valence</h3>
+                    <h4 style="color: var(--text-secondary); font-size: var(--text-lg); margin-bottom: var(--space-4);">Parasympathetic (PNS)</h4>
+                    <p>
+                        Tracks comfort vs. discomfort through vagal-linked patterns in low-frequency PPG dynamics,
+                        acting as a continuous "pleasantness" signal rather than post-hoc sentiment.
+                    </p>
+                    <p style="font-size: var(--text-sm); color: var(--text-tertiary); margin: 0;">
+                        Aligned to EMG (zygomaticus–corrugator)<br>
+                        Seconds → weeks
+                    </p>
+                </div>
+
+                <!-- Dimension II -->
+                <div class="audience-card fade-up">
+                    <h3 style="color: var(--green-600);">Dimension II: Motivation</h3>
+                    <h4 style="color: var(--text-secondary); font-size: var(--text-lg); margin-bottom: var(--space-4);">α-sympathetic</h4>
+                    <p>
+                        Captures approach–withdrawal dynamics from vasomotor activity, indexing when the system is
+                        leaning in, disengaging, or actively avoiding the current context.
+                    </p>
+                    <p style="font-size: var(--text-sm); color: var(--text-tertiary); margin: 0;">
+                        Validated against joystick approach<br>
+                        Beat-level resolution
+                    </p>
+                </div>
+
+                <!-- Dimension III -->
+                <div class="audience-card fade-up">
+                    <h3 style="color: var(--green-600);">Dimension III: Activation</h3>
+                    <h4 style="color: var(--text-secondary); font-size: var(--text-lg); margin-bottom: var(--space-4);">β-sympathetic</h4>
+                    <p>
+                        Distinguishes calm vs. energized states via higher-frequency dynamics, separating quiet focus,
+                        healthy arousal, and overload rather than calling everything "stress."
+                    </p>
+                    <p style="font-size: var(--text-sm); color: var(--text-tertiary); margin: 0;">
+                        Aligned to eye-aspect arousal<br>
+                        Ready for sleep & fatigue
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SIGNAL ARCHITECTURE SECTION ===== -->
+    <section style="background: var(--bg-primary); padding: var(--space-24) 0;">
+        <div class="container">
+            <div class="fade-up" style="text-align: center; margin-bottom: var(--space-12);">
+                <p style="font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-700); font-weight: var(--font-semibold);">Signal architecture</p>
+                <h2>One measurement layer across timescales.</h2>
+                <p style="max-width: 800px; margin: 0 auto; font-size: var(--text-lg); color: var(--text-secondary);">
+                    An extended Kalman filter tracks band-limited oscillations within the PPG stream, enabling emotion,
+                    state, and trait inference using the same model—no re-training, no hidden modes.
+                </p>
+                <p style="margin-top: var(--space-6); font-family: var(--font-mono); color: var(--green-700); font-weight: var(--font-medium);">
+                    On-device · C-optimized · Cloud-optional
+                </p>
+            </div>
+
+            <!-- EKF Dynamics -->
+            <div style="background: var(--bg-accent-light); padding: var(--space-12); border-radius: var(--radius-xl); margin-bottom: var(--space-12);" class="fade-up">
+                <h3 style="color: var(--green-700); margin-bottom: var(--space-6);">Real-time EKF dynamics</h3>
+                <p style="margin-bottom: var(--space-8);">
+                    NerMI's EKF tracks oscillatory components at predefined frequencies (VLF, LF, HF, UHF),
+                    converting standard PPG into a continuous map of autonomic behavior.
+                </p>
+
+                <div style="display: grid; gap: var(--space-6);">
+                    <div style="padding: var(--space-6); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--green-500);">
+                        <h4 style="color: var(--green-700); margin-bottom: var(--space-3);">Seconds</h4>
+                        <p style="margin: 0;"><strong>Emotion:</strong> heartbeat-level updates in Valence, Motivation, and Activation for moment-to-moment changes.</p>
+                    </div>
+
+                    <div style="padding: var(--space-6); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--green-600);">
+                        <h4 style="color: var(--green-700); margin-bottom: var(--space-3);">Minutes–hours</h4>
+                        <p style="margin: 0;"><strong>States:</strong> work sessions, interactions, recovery windows, and sleep stages become structured patterns.</p>
+                    </div>
+
+                    <div style="padding: var(--space-6); background: var(--white); border-radius: var(--radius-md); border-left: 4px solid var(--green-700);">
+                        <h4 style="color: var(--green-700); margin-bottom: var(--space-3);">Days–weeks</h4>
+                        <p style="margin: 0;"><strong>Traits:</strong> repeated behavioral signatures stabilize into temperament and personality profiles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why it works -->
+            <div class="fade-up">
+                <h3 style="color: var(--green-700); margin-bottom: var(--space-6);">Why it works when black boxes don't</h3>
+                <p style="margin-bottom: var(--space-8);">
+                    Instead of throwing data at a deep net, NerMI encodes the physiology directly. That keeps the logic
+                    visible and the computation light.
+                </p>
+
+                <div class="values-grid">
+                    <div class="value-item">
+                        <h4>Lawful physiology</h4>
+                        <p>Each dimension maps to a known autonomic mechanism, not a hidden layer.</p>
+                    </div>
+
+                    <div class="value-item">
+                        <h4>Transparent math</h4>
+                        <p>EKF + frequency decomposition can be inspected, audited, and replicated.</p>
+                    </div>
+
+                    <div class="value-item">
+                        <h4>Hardware-agnostic</h4>
+                        <p>If a device exposes PPG with IBI and pulse volume, NerMI can run on it.</p>
+                    </div>
+
+                    <div class="value-item">
+                        <h4>Predictable cost</h4>
+                        <p>Designed for constrained wearables, not server farms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== USE CASES SECTION ===== -->
+    <section style="background: var(--gradient-accent); padding: var(--space-24) 0;">
+        <div class="container">
+            <h2 class="fade-up" style="text-align: center; color: var(--white); margin-bottom: var(--space-16);">Use Cases</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8);">
+                <div class="value-item fade-up">
+                    <h4>Personal intelligence</h4>
+                    <p>Long-term emotional signatures roll up into personality estimates, without questionnaires.</p>
+                </div>
+
+                <div class="value-item fade-up">
+                    <h4>Health & fatigue</h4>
+                    <p>Detect overload, chronic strain, and recovery quality from the same stream used for heart rate.</p>
+                </div>
+
+                <div class="value-item fade-up">
+                    <h4>Human–AI coaching</h4>
+                    <p>Interfaces that respond to how a person is actually doing, not just what they click.</p>
+                </div>
+
+                <div class="value-item fade-up">
+                    <h4>Research & clinics</h4>
+                    <p>Bring quantitative emotion and personality into lab, clinic, and field studies with one pipeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <!-- <img src="assets/logos/myADAPT-logo.png" alt="NerMI Logo" class="footer-logo"> -->
+                    <h2 style="margin: 0 0 var(--space-6) 0; color: white;">NerMI<span class="trademark">™</span></h2>
+
+                    <p class="footer-description">
+                        <strong>NERMI is a conceptual and technical intellectual property developed by McClafferty Innovations, LLC.</strong><br>
+                        Corporate information: website coming soon
+                    </p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>Call or Text at:<br><a href="tel:+15403157223">+1 (540) 315-7223</a></p>
+                    <p>Email:<br><a href="mailto:srmcclafferty@gmail.com">srmcclafferty@gmail.com</a></p>
+
+                    <div class="social-links">
+                        <a href="https://x.com/Claffertyshane" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/shane-mcclafferty-764aa3211" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+                        </a>
+                        <a href="mailto:srmcclafferty@gmail.com" aria-label="Email">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 McClafferty Innovations, LLC. All rights reserved. | NerMI<span class="trademark">™</span> is a trademark of McClafferty Innovations, LLC.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

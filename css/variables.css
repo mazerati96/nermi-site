@@ -34,12 +34,17 @@
 	--text-tertiary: var(--gray-500);
 	--text-on-dark: var(--white);
 	--text-on-green: var(--white);
-	/* Background Gradients */
-	--gradient-hero: linear-gradient(180deg, var(--green-50) 0%, var(--green-100) 100%);
-	--gradient-section-1: linear-gradient(180deg, var(--green-100) 0%, var(--green-200) 100%);
-	--gradient-section-2: linear-gradient(180deg, var(--green-200) 0%, var(--green-400) 100%);
-	--gradient-section-3: linear-gradient(180deg, var(--green-400) 0%, var(--green-600) 100%);
-	--gradient-footer: linear-gradient(180deg, var(--green-700) 0%, var(--green-900) 100%);
+	/* Background Gradients - Subtle, medical-grade */
+	--gradient-hero: linear-gradient(135deg, var(--green-50) 0%, var(--white) 100%);
+	--gradient-accent: linear-gradient(135deg, var(--green-600) 0%, var(--green-700) 100%);
+	--gradient-footer: linear-gradient(135deg, var(--green-800) 0%, var(--green-900) 100%);
+	/* Section Backgrounds - Clean medical aesthetic */
+	--bg-primary: var(--white);
+	--bg-secondary: var(--off-white);
+	--bg-accent-light: #F1F8E9; /* Very subtle green tint */
+	--bg-accent: var(--green-50);
+	--bg-nav: var(--green-700);
+	--bg-footer: var(--green-900);
 	/* ===== TYPOGRAPHY ===== */
 	/* Font Families */
 	--font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;

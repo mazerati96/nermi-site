@@ -1,19 +1,26 @@
 // ===== NERMI WEBSITE - MAIN JAVASCRIPT =====
-// Handles: Parallax scrolling, scroll animations, mobile menu, navigation state
+// Handles: Card parallax effects, scroll animations, mobile menu, navigation state
 
-// ===== PARALLAX SCROLLING =====
-function initParallax() {
-    // Only run parallax on desktop/tablet (not mobile)
+// ===== CARD PARALLAX EFFECTS =====
+function initCardParallax() {
+    // Only run on desktop/tablet (not mobile)
     if (window.innerWidth > 768) {
-        const parallaxBg = document.querySelector('.parallax-bg');
+        const cards = document.querySelectorAll('.card, .audience-card');
     
-        if (parallaxBg) {
-            window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', () => {
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
                 const scrolled = window.pageYOffset;
-                // Move background slower than scroll (20% speed difference)
-                parallaxBg.style.transform = `translateY(${scrolled * 0.2}px)`;
+                const cardTop = rect.top + scrolled;
+                const windowHeight = window.innerHeight;
+        
+                // Only apply parallax when card is in viewport
+                if (rect.top < windowHeight && rect.bottom > 0) {
+                    const offset = (scrolled - cardTop + windowHeight) * 0.05;
+                    card.style.transform = `translateY(${offset}px)`;
+                }
             });
-        }
+        });
     }
 }
 
@@ -120,14 +127,14 @@ function initStaggerAnimation() {
 
 // ===== INITIALIZE EVERYTHING ON PAGE LOAD =====
 document.addEventListener('DOMContentLoaded', () => {
-    initParallax();
+    initCardParallax();
     initScrollReveal();
     initNavScroll();
     initMobileMenu();
     initSmoothScroll();
     initStaggerAnimation();
   
-    console.log('NerMI website loaded successfully');
+    console.log('🚀 NerMI website loaded successfully!');
 });
 
 // ===== HANDLE WINDOW RESIZE =====
@@ -136,12 +143,12 @@ window.addEventListener('resize', () => {
     // Debounce resize event
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-        // Reinitialize parallax if needed
+        // Reset card transforms on mobile
         if (window.innerWidth <= 768) {
-            const parallaxBg = document.querySelector('.parallax-bg');
-            if (parallaxBg) {
-                parallaxBg.style.transform = 'none';
-            }
+            const cards = document.querySelectorAll('.card, .audience-card');
+            cards.forEach(card => {
+                card.style.transform = 'none';
+            });
         }
     }, 250);
 });

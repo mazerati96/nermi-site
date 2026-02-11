@@ -56,7 +56,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Recipient email address
-$recipient = 'srmcclafferty@gmail.com';
+$recipient = 'contact@mihq.company';
 
 // Email subject
 $emailSubject = "[{$subject}] Message from {$name}";

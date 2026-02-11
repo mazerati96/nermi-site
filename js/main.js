@@ -70,10 +70,7 @@ function initDropdownMenu() {
         // MOBILE ONLY (768px and below)
         if (window.innerWidth <= 768) {
 
-            dropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            });
+   
 
             // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {

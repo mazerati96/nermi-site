@@ -87,7 +87,7 @@ function initDropdownMenu() {
             });
         });
         
-        // Desktop: Show dropdown on hover
+        /*// COMMENTED OUT DUE TO POTENTIAL RACE CONDTION ON MOBILE - MAY NEED REWORKING
         if (window.innerWidth > 768) {
             dropdown.addEventListener('mouseenter', () => {
                 dropdown.classList.add('active');
@@ -96,7 +96,7 @@ function initDropdownMenu() {
             dropdown.addEventListener('mouseleave', () => {
                 dropdown.classList.remove('active');
             });
-        }
+        }*/
     }
 }
 

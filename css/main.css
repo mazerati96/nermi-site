@@ -186,7 +186,7 @@ strong {
     height: 100px; /* Big logo */
     width: auto;
     max-width: none;
-    filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+    filter: brightness(0) invert(1); /*makes logo white*/
     /* KEY FIX: Negative margins let logo overflow the navbar vertically */
     margin-top: -15px; /* Extends upward beyond navbar */
     margin-bottom: -15px; /* Extends downward beyond navbar */

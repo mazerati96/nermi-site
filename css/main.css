@@ -186,7 +186,7 @@ strong {
     height: 100px; /* Big logo */
     width: auto;
     max-width: none;
-    /* keep original logo colors on the green nav */
+    filter: brightness(0) invert(1); /* Makes logo white if it's dark */
     /* KEY FIX: Negative margins let logo overflow the navbar vertically */
     margin-top: -15px; /* Extends upward beyond navbar */
     margin-bottom: -15px; /* Extends downward beyond navbar */
@@ -762,7 +762,7 @@ section {
     height: 60px;
     width: auto;
     margin-bottom: var(--space-6);
-    /* preserve original logo colors in footer */
+    filter: brightness(0) invert(1);
 }
 
 .footer-description {

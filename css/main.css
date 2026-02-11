@@ -181,9 +181,20 @@ strong {
 }
 
 .nav-logo {
-    height: 40px;
+    /* Increased height so the logo appears larger on desktop
+       Keep width:auto to preserve aspect ratio and add a max-width
+       to avoid overflow on very wide logos. */
+    height: 64px;   
     width: auto;
+    max-width: 220px;
     filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+}
+
+/* Ensure the logo doesn't dominate small screens */
+@media (max-width: 640px) {
+    .nav-logo {
+        height: 40px;
+    }
 }
 
 .nav-menu {

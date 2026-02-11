@@ -918,7 +918,7 @@ section {
         left: 0;
         right: 0;
         height: 4px;
-        background: linear-gradient(90deg, var(--green-accent-light) 0%, var(--green-accent-neon) 50%, var(--green-accent-light) 100% );
+        background: linear-gradient(90deg, var(--black) 0%, var(--black) 50%, var(--black) 100% );
     }
 
 .footer-content {

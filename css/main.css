@@ -236,7 +236,7 @@ strong {
     }
 
         .nav-menu a:hover {
-            color: var(--black);
+            color: var(--green-accent-light);
         }
 
         .nav-menu a::after {
@@ -246,7 +246,7 @@ strong {
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--black);
+            background: var(--green-accent-light);
             transition: width var(--transition-base);
         }
 
@@ -443,7 +443,7 @@ section {
     .btn-primary:hover {
         background: var(--green-700);
         border-color: var(--green-700);
-        color: var(--black);
+        color: var(--white);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
@@ -458,7 +458,7 @@ section {
     .btn-secondary:hover {
         background: var(--green-700);
         border-color: var(--green-700);
-        color: var(--black);
+        color: var(--white);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
@@ -747,6 +747,16 @@ section {
     margin-bottom: var(--space-12);
     line-height: var(--leading-relaxed);
 }
+
+.why-matters a {
+    color: var(--green-600);
+    text-decoration: underline;
+    font-weight: var(--font-semibold);
+}
+
+    .why-matters a:hover {
+        color: var(--green-800);
+    }
 
 .values-grid {
     display: grid;

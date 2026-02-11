@@ -849,7 +849,7 @@ section {
 }
 
 .footer-contact a {
-    color: var(--green-accent-light);
+    color: #4A9EFF;
     transition: color var(--transition-base);
     text-decoration: underline;
     text-decoration-color: transparent;

@@ -236,7 +236,7 @@ strong {
     }
 
         .nav-menu a:hover {
-            color: var(--black);
+            color: var(--green-accent-light);
         }
 
         .nav-menu a::after {
@@ -246,7 +246,7 @@ strong {
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--black);
+            background: var(--green-accent-light);
             transition: width var(--transition-base);
         }
 
@@ -270,6 +270,87 @@ strong {
         height: 3px;
         background: var(--white);
         transition: all var(--transition-base);
+    }
+
+/* ===== DROPDOWN NAVIGATION STYLES ===== */
+
+/* Dropdown container */
+.nav-dropdown {
+    position: relative;
+}
+
+/* Dropdown toggle (the "Partnerships" link with arrow) */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Dropdown arrow icon */
+.dropdown-arrow {
+    transition: transform var(--transition-base);
+    margin-left: 4px;
+}
+
+/* Rotate arrow when dropdown is active */
+.nav-dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu (the submenu) */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    list-style: none;
+    padding: var(--space-2) 0;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all var(--transition-base);
+    z-index: var(--z-dropdown);
+}
+
+/* Show dropdown when active */
+.nav-dropdown.active .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: var(--space-3) var(--space-5);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all var(--transition-base);
+    border-left: 3px solid transparent;
+}
+
+    .dropdown-menu a:hover {
+        background: var(--green-50);
+        color: var(--green-700);
+        border-left-color: var(--green-600);
+    }
+
+    /* Remove the underline effect from dropdown items */
+    .dropdown-menu a::after {
+        display: none;
     }
 
 /* ===== SECTIONS ===== */
@@ -443,7 +524,7 @@ section {
     .btn-primary:hover {
         background: var(--green-700);
         border-color: var(--green-700);
-        color: var(--black);
+        color: var(--white);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
@@ -458,7 +539,7 @@ section {
     .btn-secondary:hover {
         background: var(--green-700);
         border-color: var(--green-700);
-        color: var(--black);
+        color: var(--white);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
@@ -949,6 +1030,49 @@ section {
     .nav-toggle {
         display: flex;
     }
+
+    /* Mobile dropdown styles */
+    .nav-dropdown {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
+        padding: var(--space-2) 0;
+    }
+
+    .dropdown-menu {
+        position: static;
+        background: var(--green-900);
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-base);
+    }
+
+    .nav-dropdown.active .dropdown-menu {
+        max-height: 200px;
+        padding: var(--space-2) 0;
+    }
+
+    .dropdown-menu a {
+        color: rgba(255, 255, 255, 0.85);
+        padding: var(--space-3) var(--space-6);
+        border-left: 3px solid transparent;
+    }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-left-color: var(--green-accent-light);
+        }
 
     h1 {
         font-size: var(--text-4xl);

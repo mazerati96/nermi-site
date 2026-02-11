@@ -164,7 +164,7 @@ strong {
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: background var(--transition-base), box-shadow var(--transition-base);
-    min-height: 120px; /* ensure nav can contain larger logo */
+    min-height: 70px; /* Compact navbar height */
 }
 
     .nav.scrolled {
@@ -176,25 +176,43 @@ strong {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem var(--space-6);
+    padding: 0.75rem var(--space-6); /* Reduced vertical padding for compact look */
     max-width: var(--container-wide);
     margin: 0 auto;
 }
 
 .nav .nav-container .nav-logo {
-    /* Increased height so the logo appears larger on desktop
-       Use a more specific selector (.nav .nav-container .nav-logo)
-       so this rule wins without needing !important. */
-    height: 120px;
+    /* Logo is larger than the navbar itself */
+    height: 100px; /* Big logo */
     width: auto;
     max-width: none;
     filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+    /* KEY FIX: Negative margins let logo overflow the navbar vertically */
+    margin-top: -15px; /* Extends upward beyond navbar */
+    margin-bottom: -15px; /* Extends downward beyond navbar */
+    /* Smooth transition when scrolling */
+    transition: height 0.3s ease, margin 0.3s ease;
+}
+
+/* Slightly smaller logo when scrolled for cleaner look */
+.nav.scrolled .nav-logo {
+    height: 70px;
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 /* Ensure the logo doesn't dominate small screens (responsive) */
 @media (max-width: 640px) {
     .nav .nav-container .nav-logo {
-        height: 40px;
+        height: 50px;
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+
+    .nav.scrolled .nav-logo {
+        height: 45px;
+        margin-top: -3px;
+        margin-bottom: -3px;
     }
 }
 

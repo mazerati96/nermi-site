@@ -1187,6 +1187,10 @@ section {
     border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .metaslide {
@@ -1216,7 +1220,20 @@ section {
     height: auto;
     display: block;
     border-radius: var(--radius-xl);
+    min-height: 400px;
+    object-fit: contain;
+    background: var(--gray-100);
 }
+
+    /* Fallback for broken images */
+    .metaslide img::before {
+        content: 'Upload slide image to assets/ folder';
+        display: block;
+        padding: var(--space-16);
+        text-align: center;
+        color: var(--text-tertiary);
+        font-size: var(--text-lg);
+    }
 
 /* Slide counter */
 .slide-counter {

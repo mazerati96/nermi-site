@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initStaggerAnimation();
   
-    console.log('🚀 NerMI website loaded successfully!');
+    console.log('NerMI website loaded successfully!');
 });
 
 // ===== HANDLE WINDOW RESIZE =====

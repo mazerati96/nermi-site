@@ -191,8 +191,14 @@ strong {
     margin-top: -15px; /* Extends upward beyond navbar */
     margin-bottom: -15px; /* Extends downward beyond navbar */
     /* Smooth transition when scrolling */
-    transition: height 0.3s ease, margin 0.3s ease;
+    transition: height 0.3s ease, margin 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
 }
+
+    /* Logo turns black on hover */
+    .nav .nav-container .nav-logo:hover {
+        filter: brightness(0);
+    }
 
 /* Slightly smaller logo when scrolled for cleaner look */
 .nav.scrolled .nav-logo {
@@ -200,6 +206,11 @@ strong {
     margin-top: -10px;
     margin-bottom: -10px;
 }
+
+    /* Logo hover effect works in scrolled state too */
+    .nav.scrolled .nav-logo:hover {
+        filter: brightness(0);
+    }
 
 /* Ensure the logo doesn't dominate small screens (responsive) */
 @media (max-width: 640px) {
@@ -399,7 +410,7 @@ section {
     inset: 0; /* cover whole hero */
     background-image: /*linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),*/ url('../assets/brain-hand.png');
     background-size: cover;
-    background-position: center 30%;
+    background-position: center 45%;
     background-repeat: no-repeat;
     z-index: var(--z-base);
     opacity: 1;

@@ -443,6 +443,7 @@ section {
     .btn-primary:hover {
         background: var(--green-700);
         border-color: var(--green-700);
+        color: var(--black);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
@@ -457,6 +458,7 @@ section {
     .btn-secondary:hover {
         background: var(--green-700);
         border-color: var(--green-700);
+        color: var(--black);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
     }
@@ -580,6 +582,16 @@ section {
 .about-text p {
     color: var(--text-primary);
 }
+
+.about-text a {
+    color: var(--green-600);
+    text-decoration: underline;
+    font-weight: var(--font-semibold);
+}
+
+    .about-text a:hover {
+        color: var(--green-800);
+    }
 
 .about-text blockquote {
     font-size: var(--text-xl);

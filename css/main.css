@@ -407,10 +407,13 @@ section {
 /* Decorative background image for hero (brain-hand) */
 .hero-bg {
     position: absolute;
-    inset: 0; /* cover whole hero */
+    top: 70px; /* Start below the navbar instead of behind it */
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: /*linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)),*/ url('../assets/brain-hand.png');
     background-size: cover;
-    background-position: center 70%;
+    background-position: center center;
     background-repeat: no-repeat;
     z-index: var(--z-base);
     opacity: 1;
@@ -428,7 +431,6 @@ section {
 @media (min-width: 1024px) {
     .hero-bg {
         background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../assets/brain-hand.png');
-        background-position: center 70%;
         filter: saturate(0.85) brightness(0.95);
     }
 }
@@ -436,7 +438,7 @@ section {
 /* On small screens reduce artwork prominence */
 @media (max-width: 768px) {
     .hero-bg {
-        background-position: center 70%;
+        top: 50px; /* Smaller navbar on mobile */
         background-size: 140%;
         opacity: 0.95;
     }

@@ -164,6 +164,7 @@ strong {
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: background var(--transition-base), box-shadow var(--transition-base);
+    min-height: 120px; /* ensure nav can contain larger logo */
 }
 
     .nav.scrolled {
@@ -175,7 +176,7 @@ strong {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--space-4) var(--space-6);
+    padding: 1rem var(--space-6);
     max-width: var(--container-wide);
     margin: 0 auto;
 }
@@ -184,16 +185,16 @@ strong {
     /* Increased height so the logo appears larger on desktop
        Keep width:auto to preserve aspect ratio and add a max-width
        to avoid overflow on very wide logos. */
-    height: 100px;   
+    height: 120px !important;   
     width: auto;
-    max-width: 500px;
+    max-width: none;
     filter: brightness(0) invert(1); /* Makes logo white if it's dark */
 }
 
 /* Ensure the logo doesn't dominate small screens */
 @media (max-width: 640px) {
     .nav-logo {
-        height: 40px;
+        height: 40px !important;
     }
 }
 

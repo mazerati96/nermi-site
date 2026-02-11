@@ -274,7 +274,7 @@ section {
 /* ===== HERO SECTION ===== */
 .hero {
     position: relative;
-    padding-top: calc(80px + var(--space-24)); /* Account for fixed nav */
+    padding-top: calc(120px + var(--space-24)); /* Account for fixed nav (nav height is 120px on desktop) */
     padding-bottom: var(--space-32);
     background: var(--gradient-hero);
     overflow: hidden;

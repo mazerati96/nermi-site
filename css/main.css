@@ -184,9 +184,9 @@ strong {
     /* Increased height so the logo appears larger on desktop
        Keep width:auto to preserve aspect ratio and add a max-width
        to avoid overflow on very wide logos. */
-    height: 64px;   
+    height: 100px;   
     width: auto;
-    max-width: 220px;
+    max-width: 500px;
     filter: brightness(0) invert(1); /* Makes logo white if it's dark */
 }
 

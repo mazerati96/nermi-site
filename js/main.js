@@ -87,7 +87,7 @@ function initDropdownMenu() {
             });
         });
         
-        // Desktop: Show dropdown on hover (optional enhancement)
+        // Desktop: Show dropdown on hover
         if (window.innerWidth > 768) {
             dropdown.addEventListener('mouseenter', () => {
                 dropdown.classList.add('active');

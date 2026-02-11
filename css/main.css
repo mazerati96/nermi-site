@@ -181,20 +181,20 @@ strong {
     margin: 0 auto;
 }
 
-.nav-logo {
+.nav .nav-container .nav-logo {
     /* Increased height so the logo appears larger on desktop
-       Keep width:auto to preserve aspect ratio and add a max-width
-       to avoid overflow on very wide logos. */
-    height: 120px !important;   
+       Use a more specific selector (.nav .nav-container .nav-logo)
+       so this rule wins without needing !important. */
+    height: 120px;
     width: auto;
     max-width: none;
     filter: brightness(0) invert(1); /* Makes logo white if it's dark */
 }
 
-/* Ensure the logo doesn't dominate small screens */
+/* Ensure the logo doesn't dominate small screens (responsive) */
 @media (max-width: 640px) {
-    .nav-logo {
-        height: 40px !important;
+    .nav .nav-container .nav-logo {
+        height: 40px;
     }
 }
 

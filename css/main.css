@@ -324,7 +324,7 @@ section {
 /* Make the background image slightly darker/desaturated on large screens */
 @media (min-width: 1024px) {
     .hero-bg {
-        background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../assets/brain-hand.png');
+        background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255,255,255,0.1)), url('../assets/brain-hand.png');
         filter: saturate(0.85) brightness(0.95);
     }
 }

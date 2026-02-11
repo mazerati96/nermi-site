@@ -10,6 +10,138 @@
 
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/main.css">
+
+    <!--
+    ========================================
+    CONTACT FORM STYLES
+    Added specifically for the working contact form
+    These styles are self-contained and won't affect your existing CSS
+    ========================================
+    -->
+    <style>
+        /* Contact form container - centers and constrains width */
+        .contact-form-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main form styling - matches your NerMI design system */
+        .working-contact-form {
+            background: var(--white);
+            padding: var(--space-10);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--gray-200);
+        }
+
+        /* Form group - wrapper for each input field */
+        .contact-form-group {
+            margin-bottom: var(--space-6);
+        }
+
+            /* Labels - consistent with your design */
+            .contact-form-group label {
+                display: block;
+                margin-bottom: var(--space-2);
+                font-weight: var(--font-semibold);
+                color: var(--text-primary);
+                font-size: var(--text-base);
+            }
+
+            /* Text inputs and textarea - consistent styling */
+            .contact-form-group input[type="text"],
+            .contact-form-group input[type="email"],
+            .contact-form-group textarea {
+                width: 100%;
+                padding: var(--space-4);
+                border: 2px solid var(--gray-300);
+                border-radius: var(--radius-md);
+                font-size: var(--text-base);
+                font-family: var(--font-body);
+                transition: border-color var(--transition-base), box-shadow var(--transition-base);
+                box-sizing: border-box;
+            }
+
+                /* Focus states - provides visual feedback */
+                .contact-form-group input:focus,
+                .contact-form-group textarea:focus {
+                    outline: none;
+                    border-color: var(--green-500);
+                    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+                }
+
+            /* Textarea specific - allows vertical resizing */
+            .contact-form-group textarea {
+                resize: vertical;
+                min-height: 150px;
+                line-height: 1.6;
+            }
+
+        /* Checkbox container - for privacy consent */
+        .consent-wrapper {
+            display: flex;
+            align-items: start;
+            gap: var(--space-3);
+            cursor: pointer;
+        }
+
+            .consent-wrapper input[type="checkbox"] {
+                margin-top: 4px;
+                cursor: pointer;
+            }
+
+            .consent-wrapper span {
+                font-size: var(--text-sm);
+                color: var(--text-secondary);
+                line-height: var(--leading-relaxed);
+            }
+
+        /* Submit button - disabled state */
+        .contact-submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* Loading indicator - shows while email is sending */
+        .form-loading {
+            display: none;
+            text-align: center;
+            margin-top: var(--space-4);
+            color: var(--green-600);
+            font-weight: var(--font-semibold);
+            font-size: var(--text-sm);
+        }
+
+            .form-loading.active {
+                display: block;
+            }
+
+        /* Status messages - success and error states */
+        .form-message {
+            display: none;
+            margin-top: var(--space-6);
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            font-size: var(--text-sm);
+            line-height: var(--leading-relaxed);
+        }
+
+            /* Success message - green theme */
+            .form-message.success {
+                display: block;
+                background-color: #f0fdf4;
+                color: #166534;
+                border: 2px solid #86efac;
+            }
+
+            /* Error message - red theme */
+            .form-message.error {
+                display: block;
+                background-color: #fef2f2;
+                color: #991b1b;
+                border: 2px solid #fca5a5;
+            }
+    </style>
 </head>
 <body>
 
@@ -171,7 +303,18 @@
         </div>
     </section>
 
-    <!-- ===== CONTACT FORM SECTION ===== -->
+    <!--
+    ========================================
+    CONTACT FORM SECTION - NOW WITH WORKING EMAIL FUNCTIONALITY
+    This section replaces your non-functional form
+    Key changes from your original:
+    1. Added "subject" field (required by send-email.php)
+    2. Connected to send-email.php backend
+    3. Added loading states and error handling
+    4. Form resets after successful submission
+    5. Shows success/error messages to user
+    ========================================
+    -->
     <section id="contact-form" style="background: var(--bg-primary); padding: var(--space-24) 0;">
         <div class="container-narrow">
             <div class="fade-up" style="text-align: center; margin-bottom: var(--space-12);">
@@ -181,37 +324,80 @@
                 </p>
             </div>
 
-            <!-- Contact Form -->
-            <form class="fade-up" style="background: var(--white); padding: var(--space-10); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); border: 2px solid var(--gray-200);">
-                <div style="margin-bottom: var(--space-6);">
-                    <label for="name" style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-semibold); color: var(--text-primary);">Name</label>
-                    <input type="text" id="name" name="name" required
-                           style="width: 100%; padding: var(--space-4); border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-size: var(--text-base); transition: border-color var(--transition-base);">
-                </div>
+            <!-- WORKING CONTACT FORM - Sends emails to srmcclafferty@gmail.com -->
+            <div class="contact-form-wrapper fade-up">
+                <form id="partnershipContactForm" class="working-contact-form">
 
-                <div style="margin-bottom: var(--space-6);">
-                    <label for="email" style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-semibold); color: var(--text-primary);">Email</label>
-                    <input type="email" id="email" name="email" required
-                           style="width: 100%; padding: var(--space-4); border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-size: var(--text-base); transition: border-color var(--transition-base);">
-                </div>
+                    <!-- NAME FIELD -->
+                    <div class="contact-form-group">
+                        <label for="contactName">Name *</label>
+                        <input type="text"
+                               id="contactName"
+                               name="name"
+                               required
+                               placeholder="Your full name">
+                    </div>
 
-                <div style="margin-bottom: var(--space-6);">
-                    <label for="message" style="display: block; margin-bottom: var(--space-2); font-weight: var(--font-semibold); color: var(--text-primary);">Message</label>
-                    <textarea id="message" name="message" rows="6" required
-                              style="width: 100%; padding: var(--space-4); border: 2px solid var(--gray-300); border-radius: var(--radius-md); font-size: var(--text-base); resize: vertical; font-family: var(--font-body); transition: border-color var(--transition-base);"></textarea>
-                </div>
+                    <!-- EMAIL FIELD -->
+                    <div class="contact-form-group">
+                        <label for="contactEmail">Email *</label>
+                        <input type="email"
+                               id="contactEmail"
+                               name="email"
+                               required
+                               placeholder="your.email@example.com">
+                    </div>
 
-                <div style="margin-bottom: var(--space-6);">
-                    <label style="display: flex; align-items: start; gap: var(--space-3); cursor: pointer;">
-                        <input type="checkbox" required style="margin-top: 4px;">
-                        <span style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed);">
-                            I consent to use of provided personal data for the purpose of responding to the request as described in Privacy Policy which I have read. I may withdraw my consent at any time.
-                        </span>
-                    </label>
-                </div>
+                    <!--
+                    SUBJECT FIELD - NEW!
+                    This is required by send-email.php
+                    Original form didn't have this field
+                    -->
+                    <div class="contact-form-group">
+                        <label for="contactSubject">Subject *</label>
+                        <input type="text"
+                               id="contactSubject"
+                               name="subject"
+                               required
+                               placeholder="e.g., Partnership Inquiry">
+                    </div>
 
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            </form>
+                    <!-- MESSAGE FIELD -->
+                    <div class="contact-form-group">
+                        <label for="contactMessage">Message *</label>
+                        <textarea id="contactMessage"
+                                  name="message"
+                                  required
+                                  placeholder="Tell us about your project and how you'd like to partner with NerMI..."></textarea>
+                    </div>
+
+                    <!-- PRIVACY CONSENT CHECKBOX -->
+                    <div class="contact-form-group">
+                        <label class="consent-wrapper">
+                            <input type="checkbox" required>
+                            <span>
+                                I consent to use of provided personal data for the purpose of responding to the request as described in Privacy Policy which I have read. I may withdraw my consent at any time.
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit"
+                            class="btn btn-primary contact-submit-btn"
+                            id="contactSubmitBtn"
+                            style="width: 100%;">
+                        Send Message
+                    </button>
+
+                    <!-- LOADING INDICATOR - Shows while sending -->
+                    <div class="form-loading" id="contactLoading">
+                        ⏳ Sending your message...
+                    </div>
+
+                    <!-- SUCCESS/ERROR MESSAGES - Shows after submission -->
+                    <div class="form-message" id="contactFormMessage"></div>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -252,6 +438,93 @@
         </div>
     </footer>
 
+    <!-- Existing main.js file -->
     <script src="js/main.js"></script>
+
+    <!--
+    ========================================
+    CONTACT FORM JAVASCRIPT
+    This handles form submission and sends data to send-email.php
+
+    How it works:
+    1. Prevents default form submission (which would reload the page)
+    2. Gathers form data into a JavaScript object
+    3. Sends data to send-email.php via fetch API (AJAX)
+    4. Handles the response and shows success/error messages
+    5. Resets the form on success
+
+    IMPORTANT: This assumes send-email.php is in repo root
+    ========================================
+    -->
+    <script>
+        // Use DOMContentLoaded to ensure elements exist and add defensive checks
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('partnershipContactForm');
+            if (!(form instanceof HTMLFormElement)) return;
+
+            const submitBtn = document.getElementById('contactSubmitBtn');
+            const loading = document.getElementById('contactLoading');
+            const formMessage = document.getElementById('contactFormMessage');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Ensure required UI elements exist and have correct types
+                if (!(submitBtn instanceof HTMLButtonElement) || !(loading instanceof HTMLElement) || !(formMessage instanceof HTMLElement)) {
+                    return;
+                }
+
+                /** @type {HTMLInputElement | null} */
+                const nameEl = document.getElementById('contactName');
+                /** @type {HTMLInputElement | null} */
+                const emailEl = document.getElementById('contactEmail');
+                /** @type {HTMLInputElement | null} */
+                const subjectEl = document.getElementById('contactSubject');
+                /** @type {HTMLTextAreaElement | null} */
+                const messageEl = document.getElementById('contactMessage');
+
+                const formData = {
+                    name: nameEl instanceof HTMLInputElement ? nameEl.value : '',
+                    email: emailEl instanceof HTMLInputElement ? emailEl.value : '',
+                    subject: subjectEl instanceof HTMLInputElement ? subjectEl.value : '',
+                    message: messageEl instanceof HTMLTextAreaElement ? messageEl.value : ''
+                };
+
+                // Update UI to show loading state
+                submitBtn.disabled = true;  // Disable button to prevent double-submission
+                loading.classList.add('active');  // Show "Sending..." message
+                formMessage.style.display = 'none';  // Hide any previous messages
+
+                try {
+                    const response = await fetch('/send-email.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.success) {
+                        formMessage.textContent = "✅ Thank you for reaching out! We'll get back to you shortly.";
+                        formMessage.className = 'form-message success';
+
+                        // Reset the form
+                        form.reset();
+                    } else {
+                        formMessage.textContent = result.error || "❌ Something went wrong. Please try again or email us directly at srmcclafferty@gmail.com";
+                        formMessage.className = 'form-message error';
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    formMessage.textContent = "❌ Unable to send message. Please email directly at srmcclafferty@gmail.com";
+                    formMessage.className = 'form-message error';
+                } finally {
+                    submitBtn.disabled = false;
+                    loading.classList.remove('active');
+                    formMessage.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

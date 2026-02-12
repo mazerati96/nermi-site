@@ -202,7 +202,7 @@ function initMetaSlider() {
 
     // Start auto-play
     function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 3000); // 3 seconds
+        autoPlayInterval = setInterval(nextSlide, 5000); // 5 seconds
     }
 
     // Stop auto-play

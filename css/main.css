@@ -407,7 +407,7 @@ section {
 /* Decorative background image for hero (brain-hand) */
 .hero-bg {
     position: absolute;
-    top: 70px; /* Start below the navbar instead of behind it */
+    top: 120px; /* Increased from 70px - more gap below navbar */
     left: 0;
     right: 0;
     bottom: 0;
@@ -430,15 +430,23 @@ section {
 /* Make the background image slightly darker/desaturated on large screens */
 @media (min-width: 1024px) {
     .hero-bg {
+        top: 120px; /* Same gap on desktop for consistency */
         background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../assets/brain-hand.png');
         filter: saturate(0.85) brightness(0.95);
+    }
+}
+
+/* Extra large screens (1440px+) - lock positioning */
+@media (min-width: 1440px) {
+    .hero-bg {
+        top: 120px; /* Locked at 120px for all large screens */
     }
 }
 
 /* On small screens reduce artwork prominence */
 @media (max-width: 768px) {
     .hero-bg {
-        top: 50px; /* Smaller navbar on mobile */
+        top: 80px; /* Proportional to navbar on mobile */
         background-size: 140%;
         opacity: 0.95;
     }

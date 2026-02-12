@@ -462,10 +462,7 @@ section {
 /* On small screens reduce artwork prominence */
 @media (max-width: 768px) {
     .hero-bg {
-        top: 200px; /* Push background WAY down so text sits above it */
-        background-size: contain; /* Show full image instead of zooming */
-        background-position: center top; /* Anchor to top-center */
-        opacity: 0.85; /* Slightly more subtle */
+        display: none; /* Hide background image on mobile */
     }
 
     /* Adjust hero section to push content UP */
@@ -475,15 +472,8 @@ section {
     }
 }
 
-/* Extra small screens - optimize background further */
+/* Extra small screens - hero already adjusted above */
 @media (max-width: 480px) {
-    .hero-bg {
-        top: 180px; /* Push down but not as much on tiny screens */
-        background-size: auto 55%; /* Make image smaller on tiny screens */
-        background-position: center top; /* Keep at top */
-        opacity: 0.75;
-    }
-
     .hero {
         padding-top: calc(60px + var(--space-6)); /* Even tighter on small screens */
     }

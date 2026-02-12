@@ -462,20 +462,30 @@ section {
 /* On small screens reduce artwork prominence */
 @media (max-width: 768px) {
     .hero-bg {
-        top: 70px; /* Proportional to navbar on mobile */
+        top: 200px; /* Push background WAY down so text sits above it */
         background-size: contain; /* Show full image instead of zooming */
         background-position: center top; /* Anchor to top-center */
         opacity: 0.85; /* Slightly more subtle */
+    }
+
+    /* Adjust hero section to push content UP */
+    .hero {
+        align-items: flex-start; /* Align to top instead of center */
+        padding-top: calc(70px + var(--space-8)); /* Less top padding */
     }
 }
 
 /* Extra small screens - optimize background further */
 @media (max-width: 480px) {
     .hero-bg {
-        top: 60px;
-        background-size: auto 60%; /* Make image smaller on tiny screens */
-        background-position: center 20%; /* Move it down a bit */
+        top: 180px; /* Push down but not as much on tiny screens */
+        background-size: auto 55%; /* Make image smaller on tiny screens */
+        background-position: center top; /* Keep at top */
         opacity: 0.75;
+    }
+
+    .hero {
+        padding-top: calc(60px + var(--space-6)); /* Even tighter on small screens */
     }
 }
 
@@ -1160,12 +1170,16 @@ section {
     }
 
     .hero {
-        padding-top: calc(80px + var(--space-12)); /* Reduced top padding */
         padding-bottom: var(--space-16); /* Reduced bottom padding */
         min-height: 80vh; /* Increased from 70vh for better mobile presence */
+        /* padding-top is now handled in the background positioning media query */
     }
 
     /* Hero content adjustments for mobile */
+    .hero-content {
+        margin-top: var(--space-4); /* Add space from navbar */
+    }
+
     .hero-tagline {
         font-size: 0.65rem; /* Even smaller tagline on mobile */
         letter-spacing: 0.08em; /* Less letter spacing */

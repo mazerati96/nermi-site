@@ -82,10 +82,20 @@ function initDropdownMenu() {
             }
         });
 
-        // Close after clicking a link
+        // Close dropdown AND hamburger menu after clicking a dropdown link
         dropdownMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 dropdown.classList.remove('active');
+                // Also close the hamburger menu
+                const navMenu = document.querySelector('.nav-menu');
+                const navToggle = document.querySelector('.nav-toggle');
+                if (navMenu) navMenu.classList.remove('active');
+                if (navToggle) {
+                    const spans = navToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
             });
         });
     }
@@ -113,8 +123,8 @@ function initMobileMenu() {
             }
         });
 
-        // Close menu when clicking a link
-        const navLinks = navMenu.querySelectorAll('a');
+        // Close menu when clicking a link (but NOT the dropdown toggle)
+        const navLinks = navMenu.querySelectorAll('a:not(.dropdown-toggle)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');

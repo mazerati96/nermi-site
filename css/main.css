@@ -215,15 +215,15 @@ strong {
 /* Ensure the logo doesn't dominate small screens (responsive) */
 @media (max-width: 640px) {
     .nav .nav-container .nav-logo {
-        height: 50px;
-        margin-top: -5px;
-        margin-bottom: -5px;
+        height: 60px; /* Increased from 50px for better visibility */
+        margin-top: -8px;
+        margin-bottom: -8px;
     }
 
     .nav.scrolled .nav-logo {
-        height: 45px;
-        margin-top: -3px;
-        margin-bottom: -3px;
+        height: 50px; /* Slightly bigger when scrolled */
+        margin-top: -5px;
+        margin-bottom: -5px;
     }
 }
 
@@ -446,9 +446,20 @@ section {
 /* On small screens reduce artwork prominence */
 @media (max-width: 768px) {
     .hero-bg {
-        top: 80px; /* Proportional to navbar on mobile */
-        background-size: 140%;
-        opacity: 0.95;
+        top: 70px; /* Proportional to navbar on mobile */
+        background-size: contain; /* Show full image instead of zooming */
+        background-position: center top; /* Anchor to top-center */
+        opacity: 0.85; /* Slightly more subtle */
+    }
+}
+
+/* Extra small screens - optimize background further */
+@media (max-width: 480px) {
+    .hero-bg {
+        top: 60px;
+        background-size: auto 60%; /* Make image smaller on tiny screens */
+        background-position: center 20%; /* Move it down a bit */
+        opacity: 0.75;
     }
 }
 
@@ -1123,7 +1134,7 @@ section {
     .hero {
         padding-top: calc(80px + var(--space-16));
         padding-bottom: var(--space-20);
-        min-height: 70vh;
+        min-height: 80vh; /* Increased from 70vh for better mobile presence */
     }
 
     .cards-grid {

@@ -56,7 +56,7 @@
                 <p class="hero-tagline">Adaptive Personal Intelligence Systems</p>
                 <h1>Technology</h1>
                 <p class="hero-subtitle">
-                    NerMI turns photoplethysmography into a <strong>real-time autonomic interface</strong>—tracking
+                    NerMI turns photoplethysmography and facial tracking into a <strong>real-time autonomic interface</strong>—tracking
                     <strong>valence</strong>, <strong>motivation</strong>, and <strong>activation</strong> per heartbeat, on-device,
                     without black-box models or cloud dependence.
                 </p>
@@ -197,8 +197,8 @@
             <div class="fade-up" style="text-align: center; margin-bottom: var(--space-16);">
                 <h2>One measurement layer across timescales.</h2>
                 <p style="max-width: 800px; margin: 0 auto; font-size: var(--text-lg); color: var(--text-secondary);">
-                    An extended Kalman filter tracks band-limited oscillations within the PPG stream, enabling emotion,
-                    state, and trait inference using the same model—no re-training, no hidden modes.
+                    An extended Kalman filter tracks band-limited oscillations in vascular and cardiac changes are integrated with continuous heart rate variability, enabling emotion,
+                    state, and trait inference using the same model.
                 </p>
                 <p style="margin-top: var(--space-6); font-family: var(--font-mono); color: var(--green-700); font-weight: var(--font-medium);">
                     On-device · C-optimized · Cloud-optional
@@ -207,10 +207,9 @@
 
             <!-- EKF Dynamics -->
             <div style="background: var(--bg-accent-light); padding: var(--space-12); border-radius: var(--radius-xl); margin-bottom: var(--space-12);" class="fade-up">
-                <h3 style="color: var(--green-700); margin-bottom: var(--space-6);">Real-time EKF dynamics</h3>
+                <h3 style="color: var(--green-700); margin-bottom: var(--space-6);">Real-time dynamics</h3>
                 <p style="margin-bottom: var(--space-8);">
-                    NerMI's EKF tracks oscillatory components at predefined frequencies (VLF, LF, HF, UHF),
-                    converting standard PPG into a continuous map of autonomic behavior.
+                    NerMI converts standard PPG into a continuous map of autonomic behavior.
                 </p>
 
                 <div style="display: grid; gap: var(--space-6);">
@@ -247,7 +246,7 @@
 
                     <div class="value-item">
                         <h4>Transparent math</h4>
-                        <p>EKF + frequency decomposition can be inspected, audited, and replicated.</p>
+                        <p>EKF frequency decomposition, heart rate variability, and regression models can be inspected, audited, and replicated.</p>
                     </div>
 
                     <div class="value-item">

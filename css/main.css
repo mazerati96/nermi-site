@@ -172,6 +172,13 @@ strong {
         box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
     }
 
+/* Ensure consistent nav height on mobile */
+@media (max-width: 768px) {
+    .nav {
+        min-height: 60px; /* Slightly smaller on mobile */
+    }
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -1132,9 +1139,29 @@ section {
     }
 
     .hero {
-        padding-top: calc(80px + var(--space-16));
-        padding-bottom: var(--space-20);
+        padding-top: calc(80px + var(--space-12)); /* Reduced top padding */
+        padding-bottom: var(--space-16); /* Reduced bottom padding */
         min-height: 80vh; /* Increased from 70vh for better mobile presence */
+    }
+
+    /* Hero content adjustments for mobile */
+    .hero-tagline {
+        font-size: 0.75rem; /* Smaller tagline on mobile */
+        letter-spacing: 0.1em;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 10vw, 3rem); /* Better mobile scaling */
+        line-height: 1.1;
+        margin-bottom: var(--space-4);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.25rem); /* Better mobile scaling */
+        max-width: 100%; /* Use full width on mobile */
+        margin-bottom: var(--space-6);
+        padding: 0 var(--space-2); /* Add slight horizontal padding */
     }
 
     .cards-grid {
@@ -1153,14 +1180,27 @@ section {
         grid-template-columns: 1fr;
     }
 
+    /* Better container spacing on mobile */
+    .hero .container {
+        padding: 0 var(--space-5); /* More breathing room */
+    }
+
+    .hero-content {
+        padding: 0; /* Remove any extra padding */
+    }
+
     .hero-cta {
         flex-direction: column;
         width: 100%;
+        gap: var(--space-3); /* Tighter gap between buttons */
+        margin-top: var(--space-6); /* Less space above buttons */
     }
 
     .btn {
         width: 100%;
         text-align: center;
+        padding: 1rem 1.5rem; /* Larger touch targets */
+        font-size: 0.95rem; /* Slightly larger text */
     }
 
     .card-image-wrapper {
@@ -1191,7 +1231,34 @@ section {
     }
 
     .hero {
-        min-height: 60vh;
+        min-height: 75vh; /* Increased from 60vh */
+        padding-top: calc(70px + var(--space-8)); /* Even tighter on small screens */
+        padding-bottom: var(--space-12);
+    }
+
+    /* Even smaller hero text on tiny screens */
+    .hero-tagline {
+        font-size: 0.7rem;
+        margin-bottom: var(--space-3);
+    }
+
+    .hero h1 {
+        font-size: clamp(1.75rem, 9vw, 2.5rem);
+        margin-bottom: var(--space-3);
+    }
+
+    .hero-subtitle {
+        font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+        margin-bottom: var(--space-5);
+    }
+
+    .hero-cta {
+        margin-top: var(--space-5);
+    }
+
+    .btn {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
     }
 }
 /* ===== DOCUMENT CARDS ===== */

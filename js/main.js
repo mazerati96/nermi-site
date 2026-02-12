@@ -6,14 +6,14 @@ function initCardParallax() {
     // Only run on desktop/tablet (not mobile)
     if (window.innerWidth > 768) {
         const cards = document.querySelectorAll('.card, .audience-card');
-    
+
         window.addEventListener('scroll', () => {
             cards.forEach(card => {
                 const rect = card.getBoundingClientRect();
                 const scrolled = window.pageYOffset;
                 const cardTop = rect.top + scrolled;
                 const windowHeight = window.innerHeight;
-        
+
                 // Only apply parallax when card is in viewport
                 if (rect.top < windowHeight && rect.bottom > 0) {
                     const offset = (scrolled - cardTop + windowHeight) * 0.05;
@@ -49,7 +49,7 @@ function initScrollReveal() {
 // ===== NAVIGATION SCROLL STATE =====
 function initNavScroll() {
     const nav = document.querySelector('.nav');
-  
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             nav.classList.add('scrolled');
@@ -69,8 +69,11 @@ function initDropdownMenu() {
 
     // MOBILE ONLY (768px and below)
     if (window.innerWidth <= 768) {
-
-   
+        // Toggle dropdown on click
+        dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent navigation
+            dropdown.classList.toggle('active');
+        });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
@@ -92,11 +95,11 @@ function initDropdownMenu() {
 function initMobileMenu() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
-  
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
-      
+
             // Animate hamburger to X
             const spans = navToggle.querySelectorAll('span');
             if (navMenu.classList.contains('active')) {
@@ -109,7 +112,7 @@ function initMobileMenu() {
                 spans[2].style.transform = 'none';
             }
         });
-    
+
         // Close menu when clicking a link
         const navLinks = navMenu.querySelectorAll('a');
         navLinks.forEach(link => {
@@ -127,14 +130,14 @@ function initMobileMenu() {
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-      
+
             if (target) {
                 const navHeight = document.querySelector('.nav').offsetHeight;
                 const targetPosition = target.offsetTop - navHeight;
-        
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -147,7 +150,7 @@ function initSmoothScroll() {
 // ===== STAGGER ANIMATION FOR CARDS =====
 function initStaggerAnimation() {
     const cards = document.querySelectorAll('.card, .audience-card, .value-item');
-  
+
     cards.forEach((card, index) => {
         // Add increasing delay based on index
         card.style.transitionDelay = `${index * 0.1}s`;
@@ -163,7 +166,7 @@ function initMetaSlider() {
     const dots = document.querySelectorAll('.metaslider-dot');
     const prevBtn = slider.querySelector('.metaslider-prev');
     const nextBtn = slider.querySelector('.metaslider-next');
-    
+
     let currentSlide = 0;
     let autoPlayInterval;
     let isPaused = false;
@@ -250,7 +253,7 @@ function initMetaSlider() {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!slider.matches(':hover')) return; // Only work when hovering slider
-        
+
         if (e.key === 'ArrowLeft') {
             prevSlide();
             stopAutoPlay();
@@ -276,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initStaggerAnimation();
     initMetaSlider();
-  
+
     console.log('NerMI website loaded successfully!');
 });
 

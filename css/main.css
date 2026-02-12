@@ -1183,6 +1183,53 @@ section {
         min-height: 60vh;
     }
 }
+/* ===== DOCUMENT CARDS ===== */
+.doc-card {
+    background: var(--white);
+    padding: var(--space-10);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--gray-200);
+    text-align: center;
+    transition: all var(--transition-base);
+    /* Flexbox to push button to bottom */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    .doc-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-2xl);
+        border-color: var(--green-400);
+    }
+
+.doc-card-icon {
+    margin-bottom: var(--space-6);
+}
+
+    .doc-card-icon svg {
+        color: var(--green-600);
+        margin: 0 auto;
+        display: block;
+    }
+
+.doc-card h3 {
+    color: var(--green-700);
+    margin-bottom: var(--space-4);
+}
+
+.doc-card-description {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+    flex-grow: 1; /* This makes the description take up available space */
+}
+
+.doc-card .btn {
+    width: 100%;
+    margin-top: auto; /* This pushes the button to the bottom */
+}
+
 /* ===== META SLIDER (PITCH DECK SLIDER) ===== */
 .metaslider-container {
     max-width: 900px;
